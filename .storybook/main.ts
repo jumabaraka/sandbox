@@ -13,10 +13,6 @@ export const config: StorybookConfig = {
   core: {
     builder: {
       name: 'webpack5',
-      options: {
-        fsCache: false,
-        lazyCompilation: false
-      }
     }
   },
   // @see https://github.com/storybookjs/storybook/blob/main/docs/configure/overview.md#feature-flags

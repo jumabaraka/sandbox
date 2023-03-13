@@ -1,7 +1,7 @@
 {
-  "name": "core",
+  "name": "demo",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/core/src",
+  "sourceRoot": "libs/demo/src",
   "projectType": "library",
   "generators": {
     "@nxext/stencil:component": {
@@ -15,9 +15,9 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "projectType": "library",
-        "tsConfig": "libs/core/tsconfig.lib.json",
-        "configPath": "libs/core/stencil.config.ts",
-        "outputPath": "dist/libs/core"
+        "tsConfig": "libs/demo/tsconfig.lib.json",
+        "configPath": "libs/demo/stencil.config.ts",
+        "outputPath": "dist/libs/demo"
       }
     },
     "build": {
@@ -25,9 +25,9 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "projectType": "library",
-        "tsConfig": "libs/core/tsconfig.lib.json",
-        "configPath": "libs/core/stencil.config.ts",
-        "outputPath": "dist/libs/core"
+        "tsConfig": "libs/demo/tsconfig.lib.json",
+        "configPath": "libs/demo/stencil.config.ts",
+        "outputPath": "dist/libs/demo"
       },
       "configurations": {
         "production": {
@@ -41,9 +41,9 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "projectType": "library",
-        "tsConfig": "libs/core/tsconfig.lib.json",
-        "configPath": "libs/core/stencil.config.ts",
-        "outputPath": "dist/libs/core"
+        "tsConfig": "libs/demo/tsconfig.lib.json",
+        "configPath": "libs/demo/stencil.config.ts",
+        "outputPath": "dist/libs/demo"
       }
     },
     "e2e": {
@@ -51,32 +51,31 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "projectType": "library",
-        "tsConfig": "libs/core/tsconfig.lib.json",
-        "configPath": "libs/core/stencil.config.ts",
-        "outputPath": "dist/libs/core"
+        "tsConfig": "libs/demo/tsconfig.lib.json",
+        "configPath": "libs/demo/stencil.config.ts",
+        "outputPath": "dist/libs/demo"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": "libs/core/**/*.{ts,tsx}"
+        "lintFilePatterns": "libs/demo/**/*.{ts,tsx}"
       }
     },
     "storybook": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": ["nx run core:serve", "nx run core:serve-storybook"],
+        "commands": ["nx run demo:serve", "nx run demo:serve-storybook"],
         "parallel": true
       }
     },
     "serve-storybook": {
       "executor": "@nrwl/storybook:storybook",
       "options": {
-        "port": 5500,
-        "configDir": "libs/core/.storybook",
+        "port": 4400,
         "config": {
-          "configFolder": "libs/core/.storybook"
+          "configFolder": "libs/demo/.storybook"
         }
       },
       "configurations": {
@@ -89,10 +88,9 @@
       "executor": "@nrwl/storybook:build",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/storybook/core",
-        "configDir": "libs/core/.storybook",
+        "outputPath": "dist/storybook/demo",
         "config": {
-          "configFolder": "libs/core/.storybook"
+          "configFolder": "libs/demo/.storybook"
         }
       },
       "configurations": {

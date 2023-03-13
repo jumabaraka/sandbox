@@ -13,11 +13,7 @@ export default {
 
 const Template = (args) => {
   return html`
-    <ui-test
-      first=${args.first}
-      middle=${args.middle}
-      last=${args.last}
-    ></ui-test>
+    <ui-test {...args}></ui-test>
   `;
 };
 

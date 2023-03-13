@@ -17,7 +17,10 @@
     "paths": {
       "@sandbox/core": ["dist/libs/core"],
       "@sandbox/core/*": ["dist/libs/core/dist/components/*"],
-      "@sandbox/core/loader": ["dist/libs/core/loader"]
+      "@sandbox/core/loader": ["dist/libs/core/loader"],
+      "@sandbox/demo": ["dist/libs/demo"],
+      "@sandbox/demo/*": ["dist/libs/demo/dist/components/*"],
+      "@sandbox/demo/loader": ["dist/libs/demo/loader"]
     }
   },
   "exclude": ["node_modules", "tmp"],
