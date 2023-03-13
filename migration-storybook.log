@@ -1,0 +1,83 @@
+🔎 checking possible migrations..
+
+🔎 found a 'eslintPlugin' migration:
+╭ Automigration detected ──────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                      │
+│   We've detected you are not using our eslint-plugin.                                                                                │
+│                                                                                                                                      │
+│   In order to have the best experience with Storybook and follow best practices, we advise you to install eslint-plugin-storybook.   │
+│                                                                                                                                      │
+│   More info: https://github.com/storybookjs/eslint-plugin-storybook#readme                                                           │
+│                                                                                                                                      │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'eslintPlugin' migration on your project? › (Y/n)✔ Do you want to run the 'eslintPlugin' migration on your project? … no
+? Tried to detect a Storybook renderer in your project but found multiple. This could happen in monorepos, when projects contain multiple Storybook packages in package.json. Please select the correct one: › > - Use arrow-keys. Return to submit. To automate this next time, you can pass the renderer to the CLI via the --renderer flag
+❯   @storybook/html
+    @storybook/web-components
+? Tried to detect a Storybook renderer in your project but found multiple. This could happen in monorepos, when projects contain multiple Storybook packages in package.json. Please select the correct one: › > - Use arrow-keys. Return to submit. To automate this next time, you can pass the renderer to the CLI via the --renderer flag
+    @storybook/html
+❯   @storybook/web-components
+✔ Tried to detect a Storybook renderer in your project but found multiple. This could happen in monorepos, when projects contain multiple Storybook packages in package.json. Please select the correct one: › @storybook/web-components
+
+🔎 found a 'github-flavored-markdown-mdx' migration:
+╭ Automigration detected ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                │
+│   In MDX1 you had the option of using GitHub flavored markdown.                                                                                │
+│                                                                                                                                                │
+│   Storybook 7.0 uses MDX2 for compiling MDX, and thus no longer supports GFM out of the box.                                                   │
+│   Because of this you need to explicitly add the GFM plugin in the addon-docs options:                                                         │
+│   https://storybook.js.org/docs/7.0/react/writing-docs/mdx#lack-of-github-flavored-markdown-gfm                                                │
+│                                                                                                                                                │
+│   We recommend you follow the guide on the link above, however we can add a temporary storybook addon that helps make this migration easier.   │
+│   We'll install the addon and add it to your storybook config.                                                                                 │
+│                                                                                                                                                │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'github-flavored-markdown-mdx' migration on your project? › (Y/n)✔ Do you want to run the 'github-flavored-markdown-mdx' migration on your project? … no
+
+⚠️  failed to check fix bare-mdx-stories-glob
+
+Error: ❌ Unable to determine Storybook stories globs in [object Object], skipping bare-mdx-stories-glob fix.
+
+In Storybook 7, we have deprecated defining stories in MDX files, and consequently have changed the suffix to simply .mdx.
+
+We were unable to automatically migrate your 'stories' config to include any .mdx file instead of just .stories.mdx.
+We suggest you make this change manually.
+
+To learn more about this change, see: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#mdx-docs-files
+    at Object.check (/home/barack98/.npm/_npx/eb8bf615e50a412a/node_modules/@storybook/cli/dist/generate.js:280:934)
+    at async automigrate (/home/barack98/.npm/_npx/eb8bf615e50a412a/node_modules/@storybook/cli/dist/generate.js:325:1221)
+    at async Command.<anonymous> (/home/barack98/.npm/_npx/eb8bf615e50a412a/node_modules/@storybook/cli/dist/generate.js:447:2802)
+
+╭ Migration check ran with failures ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                               │
+│                                                                                                                                                               │
+│       Failed migrations:                                                                                                                                      │
+│                                                                                                                                                               │
+│   bare-mdx-stories-glob:                                                                                                                                      │
+│   ❌ Unable to determine Storybook stories globs in [object Object], skipping bare-mdx-stories-glob fix.                                                      │
+│                                                                                                                                                               │
+│   In Storybook 7, we have deprecated defining stories in MDX files, and consequently have changed the suffix to simply .mdx.                                  │
+│                                                                                                                                                               │
+│   We were unable to automatically migrate your 'stories' config to include any .mdx file instead of just .stories.mdx.                                        │
+│   We suggest you make this change manually.                                                                                                                   │
+│                                                                                                                                                               │
+│   To learn more about this change, see: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#mdx-docs-files                                        │
+│                                                                                                                                                               │
+│                                                                                                                                                               │
+│   You can find the full logs in /home/barack98/Point/Dev/sandbox/migration-storybook.log                                                                      │
+│                                                                                                                                                               │
+│         Skipped migrations:                                                                                                                                   │
+│                                                                                                                                                               │
+│    eslintPlugin, github-flavored-markdown-mdx                                                                                                                 │
+│                                                                                                                                                               │
+│       ─────────────────────────────────────────────────                                                                                                       │
+│                                                                                                                                                               │
+│       If you'd like to run the migrations again, you can do so by running 'npx storybook@next automigrate'                                                    │
+│                                                                                                                                                               │
+│   The automigrations try to migrate common patterns in your project, but might not contain everything needed to migrate to the latest version of Storybook.   │
+│                                                                                                                                                               │
+│   Please check the changelog and migration guide for manual migrations and more information: https://storybook.js.org/migration-guides/7.0                    │
+│   And reach out on Discord if you need help: https://discord.gg/storybook                                                                                     │
+│                                                                                                                                                               │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
